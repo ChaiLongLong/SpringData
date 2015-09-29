@@ -16,8 +16,4 @@ public interface UserService {
 
     Page<User> pageTest(String name,int pageNumber, int pageSize,String sortType);
 
-
-
-
-
 }

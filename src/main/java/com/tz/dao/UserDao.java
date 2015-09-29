@@ -37,15 +37,11 @@ public interface UserDao extends CrudRepository<User,Integer>,JpaSpecificationEx
     @Query("select u from User u where u.id > ?1")
     public List<User> findByUserId(Integer id);
 
-
     @Query("select u from User u where u.id > :id")
     public List<User> findByUsersId(@Param("id")Integer id);
 
     @Modifying
     @Query(value="update User u set u.password = ?1 where u.id = ?2")
     public int updatePassword(String after, Integer before);
-
-
-
 
 }

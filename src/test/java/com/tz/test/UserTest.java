@@ -73,7 +73,7 @@ public class UserTest {
     public void test4update(){
         userDao.save(user);
         User temp = userDao.findOne(user.getId());
-        temp.setName("updated name");
+        temp.setName("name");
         temp.setPassword("124141");
         userDao.save(temp);
     }
@@ -116,6 +116,7 @@ public class UserTest {
 
     @Test
     public void test9Select(){
+        //运行结果为int,表示影响了多少行数据
         int a=userDao.updatePassword("654321", 3);
         System.out.println(a);
     }

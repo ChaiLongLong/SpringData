@@ -12,12 +12,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Created by Jerry on 2015/9/24.
  */
 @Configuration
-@ComponentScan("com.tz")
-@EnableAutoConfiguration
+@ComponentScan
+@EnableAutoConfiguration  //开启自动配置
 @EnableAspectJAutoProxy//AOP的切面功能
 @EnableTransactionManagement
-@EnableJpaRepositories("com.tz")
-@PropertySource("classpath:application.properties")
+@EnableJpaRepositories //表明Spring Data JPA遍历任何实现了org.springframework.data.repository.Repository接口的接口，然后自动生成它的实现类。
+@PropertySource("classpath:application.properties") //配置数据库参数
 public class AppConfig {
     /*@Bean
     public DataSource getDataSource(){

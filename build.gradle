@@ -1,8 +1,20 @@
 group 'Spring'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //classpath "io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE"
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'war'
+//apply plugin: "io.spring.dependency-management"
+apply plugin: "spring-boot"
 
 sourceCompatibility = 1.5
 
@@ -10,28 +22,13 @@ repositories {
     mavenCentral()
 }
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE"
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE"
-    }
-}
 
-apply plugin: "io.spring.dependency-management"
-apply plugin: "spring-boot"
 
-repositories {
-    jcenter()
-}
-
-dependencyManagement {
-    imports {
-        mavenBom 'org.springframework.boot:spring-boot-starter-parent:1.2.1.RELEASE'
-    }
-}
+//dependencyManagement {
+//    imports {
+//        mavenBom 'org.springframework.boot:spring-boot-starter-parent:1.2.1.RELEASE'
+//    }
+//}
 
 dependencies {
 
